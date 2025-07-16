@@ -349,8 +349,10 @@ def test_keymap_zoom(qtbot):
     btn_plus = mw.keymap_editor.layout_size.itemAt(0).widget()
     btn_minus = mw.keymap_editor.layout_size.itemAt(1).widget()
     # TODO: resolve this field collision, +/- are SquareButton which overrides text
-    assert QPushButton.text(btn_plus) == "+"
-    assert QPushButton.text(btn_minus) == "-"
+    #assert QPushButton.text(btn_plus) == "+"
+    #assert QPushButton.text(btn_minus) == "-"
+    assert btn_plus.text() == "+"
+    assert btn_minus.text() == "-"
 
     # grab area for first widget
     scale_initial = mw.keymap_editor.container.scale
